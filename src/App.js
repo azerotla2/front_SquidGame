@@ -5,32 +5,72 @@ import { GallerryWithDescription } from "./components/GalleryWithDescription";
 import { AboutContainer } from "./components/AboutContainer";
 import { MainBlock } from "./components/MainBlock";
 import { HeaderContainer } from "./components/HeaderContainer";
-import Cleave from 'cleave.js';
-// import 'react-phone-number-input/style.css'
-// import PhoneInput from 'react-phone-number-input'
-
 
 
 function App() {
 
-    // constructor(props, context) {
-    //     super(props, context);
-    //     this.onCreditCardChange = this.onCreditCardChange.bind(this);
-    //     this.onCreditCardFocus = this.onCreditCardFocus.bind(this);
-    // }
+    const ab = event =>{
+        let phoneInputs = document.querySelectorAll('input[data-tel-input]');
+
+        let getInputsNumberValue = function(input){
+            return input.value.replace(/\D/g, "");
+        }
+        
+        let onPhoneInput = function(e){
+            let input = e.target,
+                inputNumbersValue = getInputsNumberValue(input);
+            let formattedInputValue = "";
+            console.log("inputValue", inputNumbersValue);
+            let selectionStart = input.selectionStart;
+
+            if(!inputNumbersValue){
+                return input.value = "";
+            }
+
+            if(input.value.length != selectionStart){
+                console.log("red");
+                if (e.data && /\D/g.test(e.data)){
+                    input.value = inputNumbersValue;
+                }
+                return;
+            }
+
+            if(["7", "8", "9"].indexOf(inputNumbersValue[0]) > -1){
+                //Russia
+                if (inputNumbersValue[0] == "9"){
+                    inputNumbersValue = "7" + inputNumbersValue;
+                }
+                let firstSymbols = (inputNumbersValue[0] == "8") ? "8" : "+7";
+                formattedInputValue = firstSymbols + " ";
+
+                if (inputNumbersValue.length > 1){
+                    formattedInputValue += "(" + inputNumbersValue.substring(1, 4);
+                }
+                if (inputNumbersValue.length >= 5 ){
+                    formattedInputValue += ") " + inputNumbersValue.substring(4, 7);
+                }
+
+                if (inputNumbersValue.length >= 8){
+                    formattedInputValue += "-" + inputNumbersValue.substring(7, 9);
+                }
+
+                if (inputNumbersValue.length >= 10){
+                    formattedInputValue += "-" + inputNumbersValue.substring(9, 11);
+                }
+            } else {
+                //not Russian
+                formattedInputValue = "+" + inputNumbersValue;
+            }
+            input.value = formattedInputValue;
+        }
+
+        for (let i=0; i<phoneInputs.length; i++){
+            let input = phoneInputs[i];
+            input.addEventListener("input", onPhoneInput);
+        }
 
 
-    // onCreditCardChange(event) {
-    //     // formatted pretty value
-    //     console.log(event.target.value);
-
-    //     // raw value
-    //     console.log(event.target.rawValue);
-    // }
-
-    // onCreditCardFocus(event) {
-    //     // update some state
-    // }
+    };
 
     const [countPlayer, setCountPlayer] = useState(3500);
     const [priceZone, setIsZone] = useState(0);
@@ -67,22 +107,23 @@ function App() {
                         <option value="0" selected>Нет, нам хватит игры</option>
                         <option value="2000">Да, мы хотим узнать про дополнительную программу</option>
                     </select>
-                    <h3>Имя</h3>
-                    <input className='inputName' type='text'></input>
-                    <h3>Телефон</h3>
-                    {/* <PhoneInput
-                    className='phone'
-                    defaultCountry='RU'
-                    placeholder='(999) 999-99-99'
-                    value={phoneValue}
-                    limitMaxLength='11'
-                    onChange={setPhoneValue}/> */}
-                    <Cleave placeholder="Enter your credit card number"
-                        options={{creditCard: true}} />
-                    <input class="input-phone" type="text"/>   
+                    <div class="container-name-phone">
+                        <div>
+                            <h3>Имя</h3>
+                            <input className='input-field' type='text'></input>
+                        </div>
+                        <div>
+                        <h3>Телефон</h3>
+                        <input class="input-field" data-tel-input type="tel" onChange={ab}/>
+                        </div>   
+                    </div>
                     <h3 className='head-sum'>Стоимость вашего мероприятия составляет</h3>
                     <h2 className="sum">{countPlayer+priceProgram+priceZone} рублей</h2>
+                    <div className='container-for-button'>
+                        <button class="button-calc-price">Узнать свободное время</button>
+                    </div>
                 </div>
+                
             </div>
         </div>
     );
