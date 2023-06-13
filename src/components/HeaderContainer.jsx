@@ -7,7 +7,7 @@ export function HeaderContainer(){
                     <a className="logo">
                         <img className="logo-img" src="./logo.png" alt="логотип"></img>
                     </a>
-                    <button className="select-kvest" onClick="#">
+                    <button className="select-kvest">
                         <span>
                             Игра в кальмара
                         </span>
@@ -27,7 +27,7 @@ export function HeaderContainer(){
                         href="#">Контакты</a>    
                     </li>
                 </ul>
-                <button className="reserve-game" onClick="#">
+                <button className="reserve-game">
                     Забронировать игру
                 </button>
             </nav>
