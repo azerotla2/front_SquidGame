@@ -1,11 +1,13 @@
+import '../styles/Header.css'
+import '../styles/Gallery.css'
+
 export function HeaderContainer(){
     return(
-        <header className="header">
-        <div className="container-header">
+        <div className="header">
             <nav className="nav">
                 <ul className="logo-game_name">
                     <a className="logo">
-                        <img className="logo-img" src="./logo.png" alt="логотип"></img>
+                        <img className="logo-img" src="../icons-png/logo.png" alt="логотип"></img>
                     </a>
                     <button className="select-kvest">
                         <span>
@@ -20,7 +22,7 @@ export function HeaderContainer(){
                     </li>
                     <li className="menu-item">
                         <a className="menu-link"
-                        href="#">Фото</a>    
+                        href="#popup">Фото</a>    
                     </li>
                     <li className="menu-item">
                         <a className="menu-link"
@@ -31,7 +33,6 @@ export function HeaderContainer(){
                     Забронировать игру
                 </button>
             </nav>
-        </div>
-    </header>
+    </div>
     )
 }

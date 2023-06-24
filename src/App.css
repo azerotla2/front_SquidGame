@@ -2,16 +2,19 @@
     width: 100%;
     background-color: #160014;
     display: flex;
+    position: relative;
     flex-direction: column;
     font-family: gilroy;
+    justify-content: center;
+    align-items: center;
 }
 
 .about-background{
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-    background-color: #160014;
-    color: rgb(255, 255, 255);
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0px;
+  color: rgb(255, 255, 255);
 }
 
 a{
@@ -19,109 +22,14 @@ a{
     color: inherit;
 }
 
-.header{
-    background-color: rgb(247, 22, 217);
-}
-
-.container-header{
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-.nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.menu{
-    display: flex;
-    font-size: 20px;
-}
-
-.menu-item{
-    padding-right: 30px;
-    list-style-type: none;
-}
-
-.logo-game_name{
-    display: flex;
-    align-items: center;
+p{
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
 }
 
 @font-face{
     font-family: gilroy;
     src: url(../public/Gilroy-ExtraBold.otf)
-}
-
-.logo-img {
-    aspect-ratio: 1 / 1;
-    width: 50px;
-    object-fit: contain;
-}
-
-.select-kvest,
-.reserve-game{
-    border-radius: 4px;
-    background-color: rgb(247, 22, 217);
-    border: none;
-    color: #FFFFFF;
-    text-align: left;
-    font-size: 20px;
-    padding: 5px;
-    width: 220px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.select-kvest span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-}
-
-.select-kvest span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-}
-
-.select-kvest:hover span {
-    padding-right: 25px;
-    color: rebeccapurple;
-}
-
-.select-kvest:hover span:after {
-    opacity: 1;
-    right: 0;
-}
-
-.background-main{
-    width: 100%;
-    background-image: url("../public/main-background.jpg");
-    background-size: cover;
-}
-
-.head-container{
-    width: 1200px;
-    margin: 0 auto;
-    justify-content: left;
-    align-items: left;
-    font-size: 3em;
-    font-family: gilroy;
-    text-transform: uppercase;
-}
-
-.head-text{
-    margin-top: 200px;
-    max-width: 600px;
-    padding: 0 30px;
 }
 
 h1{
@@ -132,343 +40,41 @@ h1{
 h2{
     font-size: 40px;
     color: white;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
 }
 
 h3{
     font-size: 25px;
     color: white;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
 }
 
-.head-mes{
-    margin-top: 50px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    text-transform: none;
-}
-
-.pink-text{
-    color: rgb(247, 22, 217);
-}
-
-/* CSS */
-.move-to-calculation {
-  margin-top: 100px;
-  margin-bottom: 170px;
-  background-color: rgb(247, 22, 217);
-  border: 0 solid #E5E7EB;
-  box-sizing: border-box;
-  color: #f5f2f2;
-  display: flex;
-  font-size: 1.4rem;
-  font-weight: 700;
-  justify-content: center;
-  line-height: 1.75rem;
-  padding: .75rem 1.65rem;
-  position: relative;
-  text-align: center;
-  text-decoration: none #f7f5f5 solid;
-  text-decoration-thickness: auto;
-  width: 100%;
-  max-width: 460px;
-  position: relative;
-  cursor: pointer;
-  transform: rotate(-2deg);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.move-to-calculation:focus {
-  outline: 0;
-}
-
-.move-to-calculation:after {
-  content: '';
-  position: absolute;
-  border: 2px solid #faf4f4;
-  bottom: 4px;
-  left: 4px;
-  width: calc(100% - 0px);
-  height: calc(100% - 0px);
-}
-
-.move-to-calculation:hover:after {
-  bottom: 0px;
-  left: 0px;
-}
-
-@media (min-width: 768px) {
-  .move-to-calculation {
-    padding: .75rem 3rem;
-    font-size: 1.25rem;
+@media  (max-width: 900px) {
+  h1{
+    font-size: 50px;
   }
-}
-
-.about-container{
-    width: 1200px;
-    margin: 50px auto;
-    display: flex;
-    justify-content: center;
-    align-items: left;
-    font-size: 3em;
-    font-family: gilroy;
-    text-transform: uppercase;
-}
-
-.photo-security{
-    aspect-ratio: 1 / 1;
-    width: 512px;
-    object-fit: contain;
-    margin-left: 30px;
-}
-
-.icon-and-advantage{
-    font-size: 0.35em;
-    color: white;
-    display: flex;
-    justify-content: left;
-    align-items: left;
-}
-
-.header-and-description{
-    align-items: left;
-}
-
-.icon-advantage{
-    aspect-ratio: 1 / 1;
-    width: 80px;
-    object-fit: contain;
-    margin-right: 30px;
-}
-
-.description-of-advantage{
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.3;
-    font-size: 1em;
-    text-transform: none;
-}
-
-.head-gallery{
-    width: 700px;
-    margin: 150px auto 80px;
-    color: white;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    font-size: 1.8em;
-    font-family: gilroy;
-}
-
-.waiting-description{
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.8em;
-    font-weight: 300;
-}
-
-
-@import url('https://fonts.googleapis.com/css?family=Poppins');
-body, html{
-  margin: 0;
-  background: #2b2927;
-  font-family: 'Poppins', sans-serif;
-}
-
-.container-all{
-  max-width: 1200px;
-  width: fit-content;
-  margin: 20px auto;
-  height: fit-content;
-}
-
-.image-and-description{
-  width: calc(50% - 6px);
-  aspect-ratio: 16 / 9;
-  overflow:hidden;
-  height: fit-content;
-  margin:3px;
-  padding: 0;
-  display:block;
-  position:relative;
-  float:left;
-}
-.image-for-description{
-  width: 100%;
-  transition-duration: .3s;
-  max-width: 100%;
-  display:block;
-  overflow:hidden;
-  cursor:pointer;
-}
-.title{
-  position:absolute;
-  display:block;
-  cursor:pointer;
-  top: 35%;
-  display: none;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  font-weight: bold;
-  font-size: 1.6em;
-  text-shadow: 1px 5px 10px black;
-  transition-duration: .3s;
-}
-.text{
-  position:absolute;
-  top: 70%;
-  cursor:pointer;
-  max-width: 80%;
-  text-align:center;
-  left: 50%;
-  text-shadow: 1px 5px 10px black;
-  font-size: 1em;
-  display:none;
-  margin-right: -50%;
-  transition-duration: .3s;
-  transform: translate(-50%, -50%) 
-}
-.image-and-description:hover .image-for-description{
-  transform: scale(1.2);
-  transition-duration: .3s;
-  filter: grayscale(50%);
-  opacity: .7;
-}
-.image-and-description:hover span{
-  color:white;
-  display: block;
-  transition-duration: .3s;
-}
-@media only screen and (max-width: 900px) {
-    .image-and-description {
-        width: calc(50% - 6px);
-    }
-}
-@media only screen and (max-width: 400px) {
-    .image-and-description {
-        width: 100%;
-    }
-}
-
-.calculate-container{
-    margin: 40px auto;
-    width: 700px;
-}
-
-.calculate-head{
-    margin-top:100px;
-    text-align: center;
-}
-
-select {
-	margin: 0 10px;
-	color: rgb(247, 22, 217);
-	width: 700px;
-	padding: 15px;
-	/* height: 25px; */
-	cursor: pointer;
-	/* background: url(http://sharpik.com/wip/cuteselect/arrow.png) 295px 12px; */
-}
-
-select:hover {
-	background-color: transparent;
-	color: white;
-	padding: 15px 5px 15px 25px;
-}
-
-select option {
-	background-color: white;
-	color: gray;
-	width: 310px;
-	padding: 10px 15px;
-	height: 20px;
-	cursor: pointer;
-}
-
-select option:hover {
-	padding-left: 25px;
-	width: 270px;
-	color: #EC6F66;
-}
-
-  .sum, .head-sum{
-    text-align: center;
-    font-size: 30px;
+  
+  h2{
+    font-size: 32px;
   }
 
-  .sum{
-    color: rgb(247, 22, 217);
-  }
-
-  .description-for-select{
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-  }
-
-  .phone{
-    height: 50px;
-  }
-
-  .input-field{
-    color:rgb(247, 22, 217);
-    padding: 10px;
-    width: 300px;
-    cursor: pointer;
+  h3{
     font-size: 20px;
   }
-
-  .input-field:hover{
-    background-color: transparent;
-  }
-
-  .container-name-phone{
-    display: flex;
-    /* flex-direction: column; */
-    justify-content: space-between;
-  }
-
-/* CSS */
-.button-calc-price {
-    margin: 0 auto;
-  background-color: #f4f4f7;
-  border: 1px solid transparent;
-  border-radius: .75rem;
-  box-sizing: border-box;
-  color:rgb(247, 22, 217);
-  cursor: pointer;
-  flex: 0 0 auto;
-  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-  font-size: 1.125rem;
-  font-weight: 600;
-  line-height: 1.5rem;
-  padding: .75rem 1.2rem;
-  text-align: center;
-  text-decoration: none #6B7280 solid;
-  transition-duration: .2s;
-  transition-property: background-color,border-color,color,fill,stroke;
-  transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: auto;
 }
 
-.button-calc-price:hover {
-  background-color: #63035b;
-}
+@media (max-width: 550px){
+ h1{
+   font-size: 30px;
+ }   
 
-.button-calc-price:focus {
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
+ h2{
+  font-size: 22px;
+ }
 
-@media (min-width: 768px) {
-  .button-calc-price {
-    padding: .75rem 1.5rem;
-  }
+ h3{
+  font-size: 18px;
+ }
 }
-
-.container-for-button{
-    text-align: center;
-}
-  

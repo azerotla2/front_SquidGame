@@ -1,0 +1,86 @@
+.head-gallery{
+    max-width: 100%;
+    margin: 60px auto 60px;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 1.8em;
+    font-family: gilroy;
+}
+
+.gallery-with-description{
+  max-width: 1200px;
+  width: fit-content;
+  margin: 20px auto;
+  height: fit-content;
+}
+
+.image-and-description{
+  width: calc(50% - 6px);
+  aspect-ratio: 16 / 9;
+  overflow:hidden;
+  height: fit-content;
+  margin:3px;
+  padding: 0;
+  display:block;
+  position:relative;
+  float:left;
+}
+.image-for-description{
+  width: 100%;
+  transition-duration: .3s;
+  max-width: 100%;
+  display:block;
+  overflow:hidden;
+  cursor:pointer;
+}
+.title{
+  position:absolute;
+  display:block;
+  cursor:pointer;
+  top: 35%;
+  display: none;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 1.6em;
+  text-shadow: 1px 5px 10px black;
+  transition-duration: .3s;
+}
+.text{
+  position:absolute;
+  top: 70%;
+  cursor:pointer;
+  max-width: 80%;
+  text-align:center;
+  left: 50%;
+  text-shadow: 1px 5px 10px black;
+  font-size: 1em;
+  display:none;
+  margin-right: -50%;
+  transition-duration: .3s;
+  transform: translate(-50%, -50%) 
+}
+.image-and-description:hover .image-for-description{
+  transform: scale(1.2);
+  transition-duration: .3s;
+  filter: grayscale(50%);
+  opacity: .7;
+}
+.image-and-description:hover span{
+  color:white;
+  display: block;
+  transition-duration: .3s;
+}
+@media only screen and (max-width: 700px) {
+    .image-and-description {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .image-and-description {
+        width: 100%;
+    }
+}
